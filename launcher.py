@@ -480,7 +480,7 @@ class LauncherMainFrame(wx.Frame):
 
         self.resourcePanel = wx.Panel(self.loginFieldsPanel, wx.ID_ANY,name="resourcePanel")
         #self.resourcePanel.SetSizer(wx.BoxSizer(wx.HORIZONTAL))
-        self.resourcePanel.SetSizer(wx.FlexGridSizer(rows=4,cols=4))
+        self.resourcePanel.SetSizer(wx.FlexGridSizer(rows=4,cols=4,vgap=0,hgap=0))
 
         self.hoursLabel = wx.StaticText(self.resourcePanel, wx.ID_ANY, 'Hours requested',name='label_hours')
         self.resourcePanel.GetSizer().Add(self.hoursLabel, proportion=1,flag=wx.TOP|wx.BOTTOM|wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL,border=5)

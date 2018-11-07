@@ -50,7 +50,7 @@ LAUNCHER_VNC_OPTIONS_SHARING_TAB_INDEX = 3
 class GlobalOptionsDialog(wx.Dialog):
     def __init__(self, parent, id, title, globalOptions, tabIndex):
         wx.Dialog.__init__(self, parent, id, title, 
-            style=wx.DEFAULT_DIALOG_STYLE & ~(wx.RESIZE_BORDER | wx.RESIZE_BOX | wx.MAXIMIZE_BOX),name="optionsDialog")
+            style=wx.DEFAULT_DIALOG_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),name="optionsDialog")
 
         self.globalOptions = globalOptions
         self.tabIndex = tabIndex

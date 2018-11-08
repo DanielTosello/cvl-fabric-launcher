@@ -20,6 +20,7 @@ elif sys.platform.startswith("linux"):
 from utilityFunctions import LAUNCHER_URL,TURBOVNC_BASE_URL
 from logger.Logger import logger
 import inspect
+import wx.adv
 
 def showModal(dialog,loginprocess):
     try:
@@ -634,7 +635,7 @@ class LoginProcess():
             turboVncNotFoundTitleLabel.SetFont(font)
             turboVncNotFoundPanelSizer.Add(turboVncNotFoundTitleLabel, flag=wx.EXPAND|wx.TOP|wx.BOTTOM, border=15)
             turboVncNotFoundTextLabel1 = wx.StaticText(turboVncNotFoundPanel,
-                label = "TurboVNC (>= 1.1) was not found.\n\n" +
+                label = "TurboVNC (>= 2.2) was not found.\n\n" +
                         "Please download it from:\n")
             font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
             if sys.platform.startswith("darwin"):
@@ -643,7 +644,7 @@ class LoginProcess():
                 font.SetPointSize(9)
             turboVncNotFoundTextLabel1.SetFont(font)
             turboVncNotFoundPanelSizer.Add(turboVncNotFoundTextLabel1, flag=wx.EXPAND)
-            turboVncNotFoundHyperlink = wx.HyperlinkCtrl(turboVncNotFoundPanel,
+            turboVncNotFoundHyperlink = wx.adv.HyperlinkCtrl(turboVncNotFoundPanel,
                 id = wx.ID_ANY,
                 label = TURBOVNC_BASE_URL + turboVncLatestVersion,
                 url = TURBOVNC_BASE_URL + turboVncLatestVersion)

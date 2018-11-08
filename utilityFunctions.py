@@ -1,5 +1,6 @@
 import threading
 import wx
+import wx.adv
 import logging
 from StringIO import StringIO
 import HTMLParser
@@ -309,7 +310,7 @@ class HelpDialog(wx.Dialog):
             font.SetPointSize(9)
         contactQueriesContactLabel.SetFont(font)
 
-        contactEmailHyperlink = wx.HyperlinkCtrl(contactPanel, id = wx.ID_ANY, label = "help@massive.org.au", url = "mailto:help@massive.org.au")
+        contactEmailHyperlink = wx.adv.HyperlinkCtrl(contactPanel, id = wx.ID_ANY, label = "help@massive.org.au", url = "mailto:help@massive.org.au")
         font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
         if sys.platform.startswith("darwin"):
             font.SetPointSize(11)

@@ -1,4 +1,5 @@
 import wx
+import wx.adv
 import sys
 
 import IconPys.MASSIVElogoTransparent64x64
@@ -25,7 +26,7 @@ class multiButtonDialog(wx.Dialog):
             self.SetIcon(MASSIVE_icon.getMASSIVElogoTransparent128x128Icon())
 
         self.dialogPanel = wx.Panel(self, wx.ID_ANY)
-        self.dialogPanel.SetSizer(wx.FlexGridSizer(cols=2,rows=2))
+        self.dialogPanel.SetSizer(wx.FlexGridSizer(cols=2,rows=2,vgap=0,hgap=0))
         #self.dialogPanel.SetSizer(wx.BoxSizer(wx.VERTICAL))
         self.ButtonLabels=ButtonLabels
         self.onHelp=onHelp
@@ -47,7 +48,7 @@ class multiButtonDialog(wx.Dialog):
             self.titleLabel.SetFont(titleFont)
             self.messagePanel.GetSizer().Add(self.titleLabel,flag=wx.BOTTOM,border=10)
         else:
-            self.messagePanel.SetSizer(wx.FlexGridSizer(cols=1,rows=1))
+            self.messagePanel.SetSizer(wx.FlexGridSizer(cols=1,rows=1,vgap=0,hgap=0))
         messageWidth = 330
         self.messageLabel = wx.StaticText(self.messagePanel, wx.ID_ANY, message)
         self.messageLabel.SetForegroundColour((0,0,0))
@@ -62,7 +63,7 @@ class multiButtonDialog(wx.Dialog):
         contactQueriesContactLabel.SetForegroundColour(wx.Colour(0,0,0))
         contactPanel.GetSizer().Add(contactQueriesContactLabel)
 
-        contactEmailHyperlink = wx.HyperlinkCtrl(contactPanel, id = wx.ID_ANY, label = self.helpEmailAddress, url = "mailto:"+self.helpEmailAddress)
+        contactEmailHyperlink = wx.adv.HyperlinkCtrl(contactPanel, id = wx.ID_ANY, label = self.helpEmailAddress, url = "mailto:"+self.helpEmailAddress)
         contactEmailHyperlink.SetFont(smallFont)
         #hyperlinkPosition = wx.Point(self.contactQueriesContactLabel.GetPosition().x+self.contactQueriesContactLabel.GetSize().width+10,okButtonPosition.y)
         #hyperlinkPosition = wx.Point(self.contactQueriesContactLabel.GetPosition().x+self.contactQueriesContactLabel.GetSize().width,buttonPosition.y)

@@ -50,7 +50,7 @@ LAUNCHER_VNC_OPTIONS_SHARING_TAB_INDEX = 3
 class GlobalOptionsDialog(wx.Dialog):
     def __init__(self, parent, id, title, globalOptions, tabIndex):
         wx.Dialog.__init__(self, parent, id, title, 
-            style=wx.DEFAULT_DIALOG_STYLE & ~(wx.RESIZE_BORDER | wx.RESIZE_BOX | wx.MAXIMIZE_BOX),name="optionsDialog")
+            style=wx.DEFAULT_DIALOG_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX),name="optionsDialog")
 
         self.globalOptions = globalOptions
         self.tabIndex = tabIndex
@@ -1180,7 +1180,7 @@ Don't remember me does not store this token permantly. You will need to enter a 
         self.okClicked = False
         #self.Close(True)
         self.Show(False)
-        self.EndModal(wx.CANCEL)
+        #self.EndModal(wx.CANCEL)
 
     def saveOptions(self):
         self.okClicked = True
@@ -1225,7 +1225,7 @@ Don't remember me does not store this token permantly. You will need to enter a 
         self.stopUpdatingNetworkLogEvent.set()
         self.saveOptions()
         self.Show(False)
-        self.EndModal(wx.OK)
+        #self.EndModal(wx.OK)
       
     def enableZlibCompressionLevelWidgets(self):
         self.zlibCompressionLevelLabel.Enable()

@@ -1180,7 +1180,7 @@ Don't remember me does not store this token permantly. You will need to enter a 
         self.okClicked = False
         #self.Close(True)
         self.Show(False)
-        self.EndModal(wx.CANCEL)
+        #self.EndModal(wx.CANCEL)
 
     def saveOptions(self):
         self.okClicked = True
@@ -1225,7 +1225,7 @@ Don't remember me does not store this token permantly. You will need to enter a 
         self.stopUpdatingNetworkLogEvent.set()
         self.saveOptions()
         self.Show(False)
-        self.EndModal(wx.OK)
+        #self.EndModal(wx.OK)
       
     def enableZlibCompressionLevelWidgets(self):
         self.zlibCompressionLevelLabel.Enable()

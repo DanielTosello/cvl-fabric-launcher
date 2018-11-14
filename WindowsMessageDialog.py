@@ -1,4 +1,5 @@
 import wx
+import wx.adv
 
 import IconPys.MASSIVElogoTransparent64x64
 
@@ -59,7 +60,7 @@ class LauncherMessageDialog(wx.Dialog):
 #        self.contactQueriesContactLabel.SetPosition(wx.Point(25,buttonPosition.y))
         bottomPanel.GetSizer().Add(self.contactQueriesContactLabel,flag=wx.ALIGN_CENTER|wx.ALL,border=5)
 
-        self.contactEmailHyperlink = wx.HyperlinkCtrl(bottomPanel, id = wx.ID_ANY, label = self.helpEmailAddress, url = "mailto:" + self.helpEmailAddress)
+        self.contactEmailHyperlink = wx.adv.HyperlinkCtrl(bottomPanel, id = wx.ID_ANY, label = self.helpEmailAddress, url = "mailto:" + self.helpEmailAddress)
 #        self.contactEmailHyperlink.SetFont(smallFont) # Or maybe even smaller font?
         #hyperlinkPosition = wx.Point(self.contactQueriesContactLabel.GetPosition().x+self.contactQueriesContactLabel.GetSize().width+10,okButtonPosition.y)
 #        hyperlinkPosition = wx.Point(self.contactQueriesContactLabel.GetPosition().x+self.contactQueriesContactLabel.GetSize().width,buttonPosition.y)

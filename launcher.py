@@ -528,10 +528,10 @@ class LauncherMainFrame(wx.Frame):
         self.cipherPanel.GetSizer().Add(self.sshTunnelCipherLabel, proportion=1,flag=wx.TOP|wx.BOTTOM|wx.LEFT|wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=5)
 
         if sys.platform.startswith("win"):
-            defaultCipher = "arcfour"
+            defaultCipher = "aes128-ctr"
             sshTunnelCiphers = ["3des-cbc", "aes128-ctr", "blowfish-cbc", "arcfour"]
         else:
-            defaultCipher = "arcfour128"
+            defaultCipher = "aes128-ctr"
             sshTunnelCiphers = ["3des-cbc", "aes128-ctr", "blowfish-cbc", "arcfour128"]
         self.sshTunnelCipherComboBox = wx.ComboBox(self.cipherPanel, wx.ID_ANY, value=defaultCipher, choices=sshTunnelCiphers, size=(widgetWidth2, -1), style=wx.CB_DROPDOWN,name='jobParams_cipher')
         self.cipherPanel.GetSizer().Add(self.sshTunnelCipherComboBox, proportion=0,flag=wx.TOP|wx.BOTTOM|wx.LEFT|wx.RIGHT|wx.EXPAND|wx.ALIGN_CENTER_VERTICAL, border=5)
@@ -1201,13 +1201,13 @@ class LauncherMainFrame(wx.Frame):
         visible['debugCheckBoxPanel']=False
         visible['advancedCheckBoxPanel']=False
         visible['optionsDialog']=False
-        visible['label_ppn']=False
+#        visible['label_ppn']=False
         visible['jobParams_ppn']=False
         visible['label_mem']=False
         visible['jobParams_mem']=False
-        visible['label_nodes']=False
+#        visible['label_nodes']=False
         visible['jobParams_nodes']=False
-        visible['label_hours']=False
+#        visible['label_hours']=False
         visible['jobParams_hours']=False
         visible['manageResButton']=False
         for k in visible.keys():

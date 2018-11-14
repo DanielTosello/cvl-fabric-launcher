@@ -231,8 +231,8 @@ class LoginProcess():
             self.OKCallback=OKCallback
             self.CancelCallback=CancelCallback
 
-            self.sizer = wx.FlexGridSizer(3, 1)
-            self.buttonRow = wx.FlexGridSizer(1, 2, hgap=10)
+            self.sizer = wx.FlexGridSizer(3, 1, 0, 0)
+            self.buttonRow = wx.FlexGridSizer(1, 2, 0, 10)
             self.sizer.Add(self.label)
             self.sizer.Add(wx.StaticText(self.panel, -1, ""))
             self.sizer.Add(self.buttonRow, flag=wx.ALIGN_RIGHT)

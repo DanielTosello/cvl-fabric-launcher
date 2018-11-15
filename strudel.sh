@@ -26,6 +26,8 @@ if [ -f "${STRUDEL_DIR}"/launcher ]; then
 elif [ -f "${STRUDEL_DIR}"/bin/launcher ]; then
   LD_LIBRARY_PATH="${STRUDEL_DIR}/bin":$LD_LIBRARY_PATH
   "${STRUDEL_DIR}"/bin/launcher > ${HOME}/.strudel.log 2>&1
+elif [ -f "${STRUDEL_DIR}"/launcher.py ]; then
+  python "${STRUDEL_DIR}"/launcher.py > ${HOME}/.strudel.log 2>&1
 else
   echo "ERROR: Cannot find launcher."
 fi
